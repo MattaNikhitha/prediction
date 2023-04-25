@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>Gold Price Predictor</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title">Gold Price Prediction</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="Open">Open</label>
+                    <input class="input" type="text" name="Open" required>
+                </div>
+                <div class="inputfield">
+                    <label for="High">High</label>
+                    <input class="input" type="text" name="High" required>
+                </div>
+                <div class="inputfield">
+                    <label for="Low">Low</label>
+                    <input class="input" type="text" name="Low" required>
+                </div>
+
+                <div class="check ">
+                
+                <div class="inputfield ">
+                    <input class="btn" type="submit" value="Precict Price">
+                </div>
+
+        </form>
+
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p>Estimated Price : Rs {{pred_value}}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
